@@ -1,0 +1,32 @@
+body {
+	min-height: 2000px;
+	padding-top: 70px;
+}
+.navbar-nav a:hover{
+	color: #f0ad4e!important;
+}
+.navbar-nav .active a{
+	color: #eea236!important;	
+}
+/*
+.navbar-right li{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	color: #999999;
+}
+*/
+
+/*--------------------------------------
+ *	FORM LOGIN
+ *--------------------------------------*/
+.form-login{
+	width: 300px;
+	padding-top: 20px;
+}
+
+/*--------------------------------------
+ *	Form ejemplo 
+ *--------------------------------------*/
+#form-ejemplo input, #form-ejemplo select {
+	width: 200px;
+}

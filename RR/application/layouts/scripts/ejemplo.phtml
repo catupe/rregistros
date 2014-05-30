@@ -1,0 +1,194 @@
+<?php echo $this->doctype() ?>
+<html>
+<head>
+  <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+  	<title>CE</title>
+	<link type="image/x-icon" href="<?php echo $this->BaseUrl() ?>/imagenes/favicon.ico" rel="icon" />
+  	<?php
+  		//	bootstrap
+  		$this->headLink()->prependStylesheet($this->BaseUrl().'/bootstrap-3.1.1-dist/css/bootstrap.min.css');
+  		//$this->headScript()->prependFile($this->BaseUrl().'/bootstrap-3.1.1-dist/js/bootstrap.min.js'); 
+  		
+  		//$this->headLink()->prependStylesheet($this->BaseUrl().'/css/menu.css');
+	  	/*
+	  	$this->headLink()->appendStylesheet($this->BaseUrl().'/css/bootstrap/css/bootstrap.css');
+	  	$this->headLink()->appendStylesheet($this->BaseUrl().'/css/bootstrap/css/bootstrap-responsive.css');
+	  	$this->headLink()->appendStylesheet($this->BaseUrl().'/css/bootstrap/css/docs.css');
+			
+  		*/
+  		$this->headLink()->prependStylesheet($this->BaseUrl().'/css/style.css');
+  		echo $this->headLink();
+		echo $this->headScript();
+	?>
+</head>
+<body>
+	<!--
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</a>
+				<a class="brand">My Site</a>
+			</div>
+		     <div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+          				<li><a href="/users/sign_up">Sign Up</a></li>
+          				<li class="divider-vertical"></li>
+          				<li class="dropdown">
+            				<a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+            				<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+              					<form action="[YOUR ACTION]" method="post" accept-charset="UTF-8">
+									<input id="user_username" style="margin-bottom: 15px;" type="text" name="user[username]" size="30" />
+								  	<input id="user_password" style="margin-bottom: 15px;" type="password" name="user[password]" size="30" />
+								  	<input id="user_remember_me" style="float: left; margin-right: 10px;" type="checkbox" name="user[remember_me]" value="1" />
+								  	<label class="string optional" for="user_remember_me"> Remember me</label>
+								 
+								  	<input class="btn btn-primary" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Sign In" />
+								</form>
+            				</div>
+          				</li>
+        			</ul>
+		      </div>
+		</div>
+	</div>
+	-->
+	<!--
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Project name</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+							<li role="presentation" class="dropdown-header">Dropdown header</li>
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="presentation" class="divider"></li>
+							<li class="dropdown-header">Nav header</li>
+							<li><a href="#">Separated link</a></li>
+							<li><a href="#">One more separated link</a></li>
+						</ul>
+					</li>
+				</ul>
+				<form class="navbar-form navbar-right" role="search" method="post" action="<?php echo $this->url(array('controller'=>'index','action'=>'login'),null, true);?>">
+			        <div class="form-group">
+			          <input type="text" id="login" name="login" class="form-control" placeholder="Login">
+			          <input type="password" id="password" name="password" class="form-control" placeholder="Password">
+			        </div>
+			        <button type="submit" class="btn btn-warning">Login</button>
+			    </form>
+			</div>
+		</div>
+	</div>
+	-->
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Project name</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+							<li role="presentation" class="dropdown-header">Dropdown header</li>
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="presentation" class="divider"></li>
+							<li class="dropdown-header">Nav header</li>
+							<li><a href="#">Separated link</a></li>
+							<li><a href="#">One more separated link</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="user-logeado">Usuario: <?php print $this->nombre_usuario ?></span><b class="caret"></b></a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+							<li>
+								<div class="container-fluid">	
+									<div class="col-sm-12">	
+										<form class="form-horizontal form-login" role="form">
+											<div class="form-group">
+												<div class="col-sm-12">
+													<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-sm-12">
+													<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-sm-offset-1 col-sm-11">
+													<div class="checkbox">
+														<label>
+															<input type="checkbox"> Remember me
+														</label>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-sm-offset-2 col-sm-10">
+													<button type="submit" class="btn btn-default">Sign in</button>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</li>
+							
+						</ul>
+					</li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<?php 
+				if($this->error == 1){
+					echo $this->render('error.phtml');
+				} 
+			?>
+			<?php //echo $this->mensaje ?>
+		</div>
+		<div class="col-xs-12">
+			<?php echo $this->layout()->content ?>
+		</div>
+	</div>
+</div> <!-- /container -->
+
+
+	<script src="<?php print $this->BaseUrl().'/jquery-1.11.1/jquery.js'?>"></script>
+	<script src="<?php print $this->BaseUrl().'/bootstrap-3.1.1-dist/js/bootstrap.min.js' ?>"></script>
+</body>
+</html>
