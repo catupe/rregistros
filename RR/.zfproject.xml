@@ -15,6 +15,10 @@
         <controllerFile controllerName="Logout">
           <actionMethod actionName="index"/>
         </controllerFile>
+        <controllerFile controllerName="Adm">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="crearusuario"/>
+        </controllerFile>
       </controllersDirectory>
       <formsDirectory enabled="false"/>
       <layoutsDirectory enabled="false"/>
@@ -30,6 +34,12 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Logout">
             <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Adm">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Adm">
+            <viewScriptFile forActionName="crearusuario"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

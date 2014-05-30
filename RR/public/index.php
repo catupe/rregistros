@@ -10,7 +10,7 @@ defined('APPLICATION_ENV')
 
 // Ensure library/ is on include_path
 set_include_path(implode(PATH_SEPARATOR, array(
-    //realpath(APPLICATION_PATH . '/../library'),
+    realpath(APPLICATION_PATH . '/../../ZEND/library'),
 	realpath(APPLICATION_PATH . '/../../ZendFramework-1.12.5/library'),
     get_include_path(),
     
@@ -39,8 +39,11 @@ Zend_Registry::set('mydb', $mydb);
 /*	MENSAJES	*/
 require_once 'Zend/Application.php';
 require_once APPLICATION_PATH.'/modules/Mensajes.php';
+require_once APPLICATION_PATH.'/modules/FuncionesGrales.php';
 $mensajes = new Mensajes();
 Zend_Registry::set('mensajes', $mensajes);
+$fgrales = new FuncionesGrales();
+Zend_Registry::set('funcionesgrales', $fgrales);
 
 $application->bootstrap()
             ->run();

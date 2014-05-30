@@ -1,41 +1,61 @@
 $(document).ready(function(){
-	$("#form-login #ingresar").click(function(){
-		boton = $("#form-login #ingresar");
+	$("#form-crear-usuario #aceptar").click(function(){
+		
+		boton = $("#form-crear-usuario #aceptar");
 	 	var l = Ladda.create(boton[0]);
 	 	l.start();
 
-		$("#group-login").removeClass("has-error");
-		$("#group-password").removeClass("has-error");
-		$("#form-login .alert").remove();
+		$("#group-nombre").removeClass("has-error");
+		$("#group-apellido").removeClass("has-error");
+		$("#group-email").removeClass("has-error");
+		//$("#group-grupos").removeClass("has-error");
+		
+		$("#form-crear-usuario .alert").remove();
 		
 		var mensaje 	= '<div class="alert alert-danger fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>MENSAJE</div>';
 		var error 		= false;
 		var mensError 	= "";
 		
-		var login = $("#login").val();
-		var password = $("#password").val();
+		var nombre 		= $("#input-nombre").val();
+		var apellido	= $("#input-apellido").val();
+		var email 		= $("#input-email").val();
+		//var apellido = $("#input-apellido").val();
 		
-		if(login == ""){
-			$("#group-login").addClass("has-error");
-			mensError = "Ingrese su email";
+		if(nombre == ""){
+			$("#group-nombre").addClass("has-error");
+			mensError += "Ingrese el nombre del nuevo usuario";
+			error = true;
+		}
+		if(nombre.length > 20){
+			$("#group-nombre").addClass("has-error");
+			if(mensError != ""){
+				mensError += "<br>";
+			}
+			mensError += "El nombre del usuario debe de tener menos de 20 carateres";
+			error = true;
+		}
+		if(email == ""){
+			$("#group-email").addClass("has-error");
+			if(mensError != ""){
+				mensError += "<br>";
+			}
+			mensError += "Ingrese el email del nuevo usuario";
 			error = true;
 		}
 		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 		if((login != "") && (!regex.test(login))){
-			$("#group-login").addClass("has-error");
-			mensError = "El formato del email no es correcto";
-			error = true;
-		}
-		if(password == ""){
-			$("#group-password").addClass("has-error");
+			$("#group-email").addClass("has-error");
 			if(mensError != ""){
 				mensError += "<br>";
 			}
-			mensError += "Ingrese su password"
+			mensError += "El formato del email no es correcto";
 			error = true;
 		}
+		
 		if(!error){
-			
+			l.stop();
+			$("#form-crear-usuario").submit();
+			/*
 			var ajaxurl= window.location.href;
 	        url = LOGIN_URL;
 	        ajaxurl = ajaxurl.replace(window.location.pathname, url);
@@ -50,13 +70,16 @@ $(document).ready(function(){
 				        		l.stop();
 				    }
 	        });
+	        */
 		}
 		else{
 			var texto = mensaje.replace("MENSAJE", mensError);
 			$("#form-login").prepend(texto);
 			l.stop();
 		}
+		
 	});
+	/*
 	function r_login(data, status, xhttpr){
 		if (data.status == "ok") {
 			window.location.href = CREARUSUARIO_URL;
@@ -72,4 +95,5 @@ $(document).ready(function(){
 		    }
 		}
 	}
+	*/
 })

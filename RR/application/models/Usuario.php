@@ -6,9 +6,10 @@ class Application_Model_Usuario{
 	
     public function __construct(array $options = null){
 		try{    	
-			$db 				= Zend_Registry::get('mydb');
-			$this->_baseDatos 	= $db;
-			$this->mensajes  	= Zend_Registry::get('mensajes');
+			$db 						= Zend_Registry::get('mydb');
+			$this->_baseDatos 			= $db;
+			$this->mensajes  			= Zend_Registry::get('mensajes');
+			$this->funcionesgrales  	= Zend_Registry::get('funcionesgrales');
 		}
 		catch(Exception $e){
 			throw new Exception($e->getMessage(), $e->getCode());
@@ -47,4 +48,24 @@ class Application_Model_Usuario{
     		throw new Exception($e->getMessage(), $e->getCode());
     	}
     }    
+    public function crearUsuario($nombre = "", $apellido = "", $email ="", $largo_pass = 0){
+    	try{
+    		if($nombre == "" or $email == ""){
+    			throw new Exception($this->mensajes->getMensaje('008'), "008");
+    		}
+    		
+    		$pass = $this->funcionesgrales->random_gen($largo_pass);
+    		
+    		$consulta = " INSERT INTO usuario (email, nombre, passowrd) VALUES (:email, :nombre, :pass) ";
+    		$smt = $this->_baseDatos->prepare($consulta);
+    		$res = $smt->execute(array('login' => $login, 
+    								   'nombre'=> $nombre,
+    								   'pass' => md5($pass)));
+    		//$row = $smt->fetch( PDO::FETCH_OBJ );
+    		return $pass;
+    	}
+    	catch(Exception $e){
+    		throw new Exception($e->getMessage(), $e->getCode());
+    	}
+    }
 }
