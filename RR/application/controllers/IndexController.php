@@ -38,52 +38,12 @@ class IndexController extends Zend_Controller_Action
 
     public function loginAction()
     {
-    	
-    	/*
-    	$options = array('layout'   => 'layout');
-	    Zend_Layout::startMvc($options);
-	    $this->view->headScript()->appendFile($this->getFrontController()->getBaseUrl().'/js/index-login.js');
-	     
-	      
-    	if ($this->getRequest()->isPost()) {
-   			 
-    		$request 	= $this->getRequest();
-    		$login 		= $request->getParam("login");
-    		$pass 		= $request->getParam("password");
-    		
-    		if ($login != "" and $pass != "") {
-				$data 	 	= $this->baseDatos->login($login, $pass);
-				
-				var_dump($data);
-				
-				if(!$data){
-					$this->view->error = 1;
-					$mensaje = $this->mensajes->getMensaje('001');
-					$this->view->mensaje = $mensaje;
-				}
-				else{
-					$this->session->id_usuario 		= $data->uid;
-					$this->session->login_usuario	= $login;
-					$this->session->nombre_usuario	= $login;
-					
-					$this->view->nombre_usuario		= $this->session->nombre_usuario;
-					$this->_helper->redirector('index','index');
-				}
-    		}
-    	}
-    	*/
-    	//var_dump("===================");
-    	//$this->_helper->layout->disableLayout();
-    	//$this->_helper->viewRenderer->setNoRender();
-    	error_log("1111111111111");
-    	
     	$salida = array();
     	$salida["status"] 		= "ok";
     	$salida["valido"] 		= "0";
     	$salida["mensajeError"] = "";
     	
     	try{
-    		error_log("1111111111111");
     		 
     		$login	= $this->getRequest()->getParam("login");
     		$pass 	= $this->getRequest()->getParam("password");
@@ -91,13 +51,7 @@ class IndexController extends Zend_Controller_Action
     		if ($login != "" and $pass != "") {
     			
     			$data 	 	= $this->baseDatos->login($login, $pass);
-				//var_dump($data);
 				if(!$data){
-					/*
-					$this->view->error = 1;
-					$mensaje = $this->mensajes->getMensaje('001');
-					$this->view->mensaje = $mensaje;
-					*/
 					$salida["status"] 		= "er";
 					$mensaje = $this->mensajes->getMensaje('001');
 					$salida["mensajeError"] = $mensaje;
@@ -107,10 +61,6 @@ class IndexController extends Zend_Controller_Action
 					$this->session->login_usuario	= $login;
 					$this->session->nombre_usuario	= $login;
 					$salida["valido"] 		= "1";
-					/*
-					$this->view->nombre_usuario		= $this->session->nombre_usuario;
-					$this->_helper->redirector('index','index');
-					*/
 				}
     		}
     	}

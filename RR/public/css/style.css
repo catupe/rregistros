@@ -30,3 +30,10 @@ body {
 #form-ejemplo input, #form-ejemplo select {
 	width: 200px;
 }
+
+/*---------------------------------------
+ *	FORM Crear Usuario
+ *---------------------------------------*/
+.form-crear-usuario input, .form-crear-usuario select{
+	width: 200px;
+}

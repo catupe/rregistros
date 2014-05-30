@@ -9,6 +9,7 @@ class Mensajes{
 		$this->MENSAJE_USR["002"] = "En este momento no se puede procesar la solicitud.<br/>Vuelva a intentarlo en unos minutos";
 		$this->MENSAJE_USR["007"] = "El tiempo de la sesion ha expirado, ingrese nuevamente";
 		$this->MENSAJE_USR["008"] = "Faltan parametros";
+		$this->MENSAJE_USR["009"] = "Se cre&oacute; el usuario #USUARIO# de forma correcta<br>La contrase&ntilde;a es #PASS#";
 	}
 	public function getMensaje($code){
 		return $this->MENSAJE_USR[$code];

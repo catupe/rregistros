@@ -1,0 +1,42 @@
+<form id="form-crear-usuario" class="well form-horizontal form-crear-usuario" role="form" method="POST">
+	<legend>Crear Usuario</legend>
+	<!--
+	<div class="form-group" id="group-login">
+		<label for="input-login" class="col-xs-3 control-label">Login</label>
+		<div class="col-xs-9">
+			<input type="text" class="form-control" id="input-login" name="input-login">
+		</div>
+	</div>
+	-->
+	<div class="form-group" id="group-nombre">
+		<label for="input-nombre" class="col-xs-3 control-label">Nombre</label>
+		<div class="col-xs-9">
+			<input type="text" class="form-control" id="input-nombre" name="input-nombre">
+		</div>
+	</div>
+	<div class="form-group" id="group-apellido">
+		<label for="input-apellido" class="col-xs-3 control-label">Apellido</label>
+		<div class="col-xs-9">
+			<input type="text" class="form-control" id="input-apellido" name="input-apellido">
+		</div>
+	</div>
+	<div class="form-group" id="group-email">
+		<label for="input-email" class="col-xs-3 control-label">Email</label>
+		<div class="col-xs-9">
+			<input type="text" class="form-control" id="input-email" name="input-email">
+		</div>
+	</div>
+	<div class="form-group" id="group-grupos">
+		<label for="input-grupos" class="col-xs-3 control-label">Grupos</label>
+		<div class="col-xs-9">
+			<select multiple class="form-control" name="input-grupos[]" id="input-grupos" data-toggle="tooltip" data-placement="right" title="" data-original-title="Puede seleccionar m&aacute;s de un grupo presionando la tecla Ctrl al mismo tiempo que selecciona los grupos">
+				{OPCION}
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-xs-offset-3 col-xs-9">
+			<button type="button" id="aceptar" name="aceptar" class="btn btn-warning ladda-button" data-color="red" data-style="zoom-out">Aceptar</button>
+		</div>
+	</div>
+</form>

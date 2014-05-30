@@ -82,7 +82,11 @@
 						echo $this->render('error.phtml');
 					} 
 				?>
-				<?php //echo $this->mensaje ?>
+				<?php 
+					if($this->hay_mensaje == 1){
+						echo $this->render('mensaje.phtml');
+					}
+				?>
 			</div>
 			<div class="col-xs-12">
 				<?php echo $this->layout()->content ?>
