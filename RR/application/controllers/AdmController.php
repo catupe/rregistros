@@ -7,6 +7,9 @@ class AdmController extends Zend_Controller_Action
     {
         $this->config 		= Zend_Registry::get('config');
         $this->baseDatos 	= new Application_Model_Usuario();
+        
+        $options = array('layout'   => 'layout-sin-login');
+        Zend_Layout::startMvc($options);
     }
 
     public function indexAction()
@@ -49,7 +52,7 @@ class AdmController extends Zend_Controller_Action
 	    		}
     		}
 	    	else{
-	    		$form->setDefault("cliente", $this->getRequest()->getParam("cliente"));
+	    		//$form->setDefault("cliente", $this->getRequest()->getParam("cliente"));
 	    		//$this->view->trabajoActual =  $this->getRequest()->getParam("trabajo");
 	   		}
     	}
