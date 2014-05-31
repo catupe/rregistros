@@ -28,12 +28,12 @@ body {
  *	Form ejemplo 
  *--------------------------------------*/
 #form-ejemplo input, #form-ejemplo select {
-	width: 200px;
+	width: 30%;
 }
 
 /*---------------------------------------
  *	FORM Crear Usuario
  *---------------------------------------*/
 .form-crear-usuario input, .form-crear-usuario select{
-	width: 200px;
+	/*width: 30%;*/
 }
