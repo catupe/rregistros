@@ -8,8 +8,14 @@ class AdmController extends Zend_Controller_Action
         $this->config 		= Zend_Registry::get('config');
         $this->baseDatos 	= new Application_Model_Usuario();
         
+        $mysession = new Zend_Session_Namespace('mysession');
+        $this->session = $mysession;
+        
         $options = array('layout'   => 'layout-sin-login');
         Zend_Layout::startMvc($options);
+
+        $this->view->nombre_usuario		= $this->session->nombre_usuario;
+         
     }
 
     public function indexAction()

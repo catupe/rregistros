@@ -5,3 +5,18 @@ function error_handler(){
 	//$("#error").append("Error en la llamada");
     //$( "#loading" ).hide( "explode", null, 500, null );
 }
+$(document).ready(function(){
+	/*
+	mostrarToolTipConfiguracion = true;
+	$('.navbar #configuracion').click(function(){
+		mostrarToolTipConfiguracion = false;
+		$('.navbar #configuracion').tooltip('hide');
+	});
+	$(document).click(function(e) {
+		mostrarToolTipConfiguracion = true;
+	});
+	*/
+	$('.navbar #configuracion').hover(function(){
+		$('.navbar #configuracion').tooltip('show');
+	});
+})

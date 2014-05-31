@@ -14,6 +14,7 @@
   	<?php
   		//	bootstrap
   		$this->headLink()->prependStylesheet($this->BaseUrl().'/bootstrap-3.1.1-dist/css/bootstrap.min.css');
+  		$this->headLink()->prependStylesheet($this->BaseUrl().'/ladda/ladda-themeless.min.css');
   		//$this->headScript()->prependFile($this->BaseUrl().'/bootstrap-3.1.1-dist/js/bootstrap.min.js'); 
   		
   		//$this->headLink()->prependStylesheet($this->BaseUrl().'/css/menu.css');
@@ -63,10 +64,10 @@
 				</ul>
           		<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="user-logeado"><?php print $this->nombre_usuario ?> </span><span class="glyphicon glyphicon-user"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="configuracion" data-toggle="tooltip" data-placement="bottom" title="Configuracion"><span class="user-logeado"><?php print $this->nombre_usuario ?> </span><span class="glyphicon glyphicon-cog"></span></a>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
 							<li><a href="#"><span class="glyphicon glyphicon-edit"></span>  Perfil</a></li>
-							<li><a href="<?php echo $this->url(array('controller'=>'logout','action'=>'index'),null, true);?>"><span class="glyphicon glyphicon-off"></span>  Logout</a></li>
+							<li><a href="<?php echo $this->url(array('controller'=>'logout','action'=>'index'),null, true);?>"><span class="glyphicon glyphicon-off"></span>  Salir</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -75,8 +76,8 @@
     </div>
 
 	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
+		<div class="row" id="page">
+			<div class="col-xs-12" id="mensajes">
 				<?php 
 					if($this->error == 1){
 						echo $this->render('error.phtml');
@@ -112,7 +113,7 @@
 	<script src="<?php print $this->BaseUrl().'/bootstrap-3.1.1-dist/js/bootstrap.min.js' ?>"></script>
 	<script src="<?php print $this->BaseUrl().'/ladda/spin.min.js' ?>"></script>
 	<script src="<?php print $this->BaseUrl().'/ladda/ladda.min.js' ?>"></script>
-	<script src="<?php print $this->BaseUrl().'/js/url.f.js' ?>"></script>
+	<script src="<?php print $this->BaseUrl().'/js/url.js' ?>"></script>
 	<script src="<?php print $this->BaseUrl().'/js/gral.js' ?>"></script>
 	<?php echo $this->headScript();?>
   </body>
