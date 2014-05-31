@@ -8,9 +8,13 @@ $(document).ready(function(){
 	 	$("#group-nombre").removeClass("has-error");
 		$("#group-apellido").removeClass("has-error");
 		$("#group-email").removeClass("has-error");
+		$("#mensajes .alert").remove();
+			 	
+	 	$("#group-nombre").removeClass("has-error");
+		$("#group-apellido").removeClass("has-error");
+		$("#group-email").removeClass("has-error");
 		//$("#group-grupos").removeClass("has-error");
 		
-		$("#form-crear-usuario .alert").remove();
 		
 		var mensaje 	= '<div class="alert alert-danger fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>MENSAJE</div>';
 		var error 		= false;
