@@ -4,8 +4,8 @@ $(document).ready(function(){
 		boton = $("#form-crear-usuario #aceptar");
 	 	var l = Ladda.create(boton[0]);
 	 	l.start();
-
-		$("#group-nombre").removeClass("has-error");
+	 	
+	 	$("#group-nombre").removeClass("has-error");
 		$("#group-apellido").removeClass("has-error");
 		$("#group-email").removeClass("has-error");
 		//$("#group-grupos").removeClass("has-error");
@@ -43,7 +43,7 @@ $(document).ready(function(){
 			error = true;
 		}
 		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-		if((login != "") && (!regex.test(login))){
+		if((email != "") && (!regex.test(email))){
 			$("#group-email").addClass("has-error");
 			if(mensError != ""){
 				mensError += "<br>";
@@ -74,7 +74,7 @@ $(document).ready(function(){
 		}
 		else{
 			var texto = mensaje.replace("MENSAJE", mensError);
-			$("#form-login").prepend(texto);
+			$("#mensajes").prepend(texto);
 			l.stop();
 		}
 		
