@@ -39,6 +39,7 @@ $(document).ready(function(){
 			var ajaxurl= window.location.href;
 	        url = LOGIN_URL;
 	        ajaxurl = ajaxurl.replace(window.location.pathname, url);
+	        ajaxurl = LOGIN_URL;
 	        $.ajax({
 	                type: "POST",
 	                dataType: "json",
