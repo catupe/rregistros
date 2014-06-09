@@ -22,6 +22,9 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
+    	$options = array('layout'   => 'layout');
+    	Zend_Layout::startMvc($options);
+    	/*
     	error_log("1111111111111");
     	$this->view->headScript()->appendFile($this->getFrontController()->getBaseUrl().'/js/index-index.js');
     	    	
@@ -34,6 +37,7 @@ class IndexController extends Zend_Controller_Action
         $this->view->error = 1;
         $mensaje = $this->mensajes->getMensaje('002');
         $this->view->mensaje = $mensaje;
+        */
     }
 
     public function loginAction()
