@@ -64,7 +64,8 @@
 				</ul>
           		<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="configuracion" data-toggle="tooltip" data-placement="bottom" title="Configuracion"><span class="user-logeado"><?php print $this->nombre_usuario ?> </span><span class="glyphicon glyphicon-cog"></span></a>
+						<!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="user-logeado"><?php print $this->nombre_usuario ?> </span><span class="glyphicon glyphicon-user"></span></a>-->
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false"><span class="user-logeado"><?php print $this->nombre_usuario ?> </span><span class="glyphicon glyphicon-user"></span></a>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
 							<li><a href="#"><span class="glyphicon glyphicon-edit"></span>  Perfil</a></li>
 							<li><a href="<?php echo $this->url(array('controller'=>'logout','action'=>'index'),null, true);?>"><span class="glyphicon glyphicon-off"></span>  Salir</a></li>
@@ -113,6 +114,8 @@
 	<script src="<?php print $this->BaseUrl().'/bootstrap-3.1.1-dist/js/bootstrap.min.js' ?>"></script>
 	<script src="<?php print $this->BaseUrl().'/ladda/spin.min.js' ?>"></script>
 	<script src="<?php print $this->BaseUrl().'/ladda/ladda.min.js' ?>"></script>
+	<script src="<?php print $this->BaseUrl().'/bootstrap-hover-dropdown-master/bootstrap-hover-dropdown.min.js' ?>"></script>
+	<script src="<?php print $this->BaseUrl().'/js/url.f.js' ?>"></script>
 	<script src="<?php print $this->BaseUrl().'/js/url.js' ?>"></script>
 	<script src="<?php print $this->BaseUrl().'/js/gral.js' ?>"></script>
 	<?php echo $this->headScript();?>
